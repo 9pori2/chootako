@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  default_scope {order(id: :asc)}
+  default_scope {order(id: :desc)}
   scope :order_by_rate, -> {reorder(rate: :desc)}
   scope :label_like , ->(q){
     where(
