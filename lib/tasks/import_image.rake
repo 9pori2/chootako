@@ -3,9 +3,11 @@ task :import_image => :environment do
   img = Image.last
   last_time = img.created_at if img
 
+  puts last_time
+
   Dir.glob(File.join(IMAGE_DIR,"*.png")) do |f|
     if File.ctime(f) > last_time
-      next if Image.find_by(filename: f)
+      next if Image.find_by(filename: File.basename(f))
       img = Image.new(
         :filename => File.basename(f),
         :rate     => 0, 
