@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def register
-    @image = Image.no_label.first
+    @image = Image.no_label.reorder(id: :asc).first
     if @image
       redirect_to edit_image_path(@image)
     else
