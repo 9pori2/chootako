@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
   default_scope {order(id: :desc)}
-  scope :order_by_rate, -> {reorder(rate: :desc)}
+  scope :order_by_rate, -> {reorder(rate: :asc)}
   scope :label_like , ->(q){
     where(
       "label1 like ? or label2 like ? or label3 like ?",
