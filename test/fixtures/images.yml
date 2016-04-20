@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label1: MyString
+  label2: MyString
+  label3: MyString
+  filename: MyString
+  bin: 
+  fav: 1
+
+two:
+  label1: MyString
+  label2: MyString
+  label3: MyString
+  filename: MyString
+  bin: 
+  fav: 1

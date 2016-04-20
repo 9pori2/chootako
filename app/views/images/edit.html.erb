@@ -1,0 +1,44 @@
+<h1>えでぃっと</h1>
+
+<%= form_for(@image) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this facility from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= image_tag(show_image_image_path(@image),class: 'middle-img') %>
+  </div>
+  <div class="field">
+    <b>ファイル名</b>
+    <%= @image.filename %>
+  </div>
+  <div class="field">
+    <%= f.label :label1, "ラベル1" %><br />
+    <%= f.text_field :label1 %>
+  </div>
+  <div class="field">
+    <%= f.label :label2, "ラベル2" %><br />
+    <%= f.text_field :label2 %>
+  </div>
+  <div class="field">
+    <%= f.label :label3, "ラベル3" %><br />
+    <%= f.text_field :label3 %>
+  </div>
+  <div class="field">
+    <%= f.label :rate, "☆" %><br />
+    <%= f.text_field :rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', root_path %>

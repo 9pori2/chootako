@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chootako</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>chootako</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div id='banner-navi'>
+<h2>chootako</h2>
+</div>
+
+<div id='main-navi'>
+<div id='wrapper'>
+  <%= link_to '一覧', root_path  %>             | 
+  <%= link_to '登録', register_images_path  %> 
+</div>
+</div>
+
+<div id='container'>
 <%= yield %>
+</div>
+
+<div id='footer'>
+</div>
 
 </body>
 </html>

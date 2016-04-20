@@ -1,0 +1,35 @@
+<h3>リスト</h3>
+
+<p id='notice'><%= notice %></p>
+
+<%= form_tag(search_images_path, :method => :post) do %>
+<p>
+検索
+<%= text_field_tag :query, @params[:query] %>
+</p>
+<p><%= submit_tag "検索" %></p>
+<% end %>
+
+<hr>
+
+<div class='grid'>
+<% @images.each do |img| %>
+     <div class='image_box'>
+       <%= image_tag(show_image_image_path(img), class: 'index-img', alt: img.filename) %>
+       <p>
+         <% rate = "☆" * img.rate  %>
+         <span class='rate'><%= rate %></span>
+         <span class='labels'><%= img.labels %></span>
+       </p>
+       <p>
+         <%= link_to '編集', edit_image_path(img) %>
+         <%= link_to '保存',     download_image_image_path(img) %>
+         <%= link_to '削除',   images_path(img), method: :delete, data: {confirm: '削除?' } %>
+       </p>
+     </div>
+<% end %>
+</div>
+
+<div class='clear_area'/>
+
+<%= paginate @images %>

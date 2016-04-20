@@ -1,0 +1,28 @@
+// Place all the styles related to the images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.middle-img {
+  width: 20%;
+  border: medium solid #000;
+}
+.index-img {
+  width: 90%;
+  border: medium solid #000;
+}
+
+.grid {
+}
+
+.image_box {
+  width: 20%;
+  float: left;
+}
+
+.clear_area {
+  clear: left;
+}
+
+.rate:after {
+  content: "\A";
+  white-space: pre;
+}
