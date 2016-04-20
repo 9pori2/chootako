@@ -41,4 +41,5 @@
   </div>
 <% end %>
 
+<%= link_to '削除', image_path(@image), method: :delete, data: {confirm: '削除?' } %>
 <%= link_to '戻る', root_path %>

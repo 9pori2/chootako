@@ -23,8 +23,8 @@
        </p>
        <p>
          <%= link_to '編集', edit_image_path(img) %>
-         <%= link_to '保存',     download_image_image_path(img) %>
-         <%= link_to '削除',   images_path(img), method: :delete, data: {confirm: '削除?' } %>
+         <%= link_to '保存', download_image_image_path(img) %>
+         <%= link_to '削除', image_path(img), method: :delete, data: {confirm: '削除?' } %>
        </p>
      </div>
 <% end %>
