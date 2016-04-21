@@ -1,4 +1,11 @@
 class ImagesController < ApplicationController
+  def labels
+    @labels = Image.all.pluck(:label1,:label2,:label3).flatten.uniq
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def register
     @image = Image.no_label.reorder(id: :asc).first
     if @image

@@ -1,0 +1,22 @@
+<h3>らべる</h3>
+
+<p id='notice'><%= notice %></p>
+
+<div class='grid'>
+<% @labels.each do |label| %>
+  <% next unless label %>
+  <% next if label.empty? %>
+  <div class='search_label'>
+  <%= form_tag(search_images_path, :method => :post) do %>
+    <%= hidden_field_tag :query, "#{label}" %>
+    <p><%= submit_tag "#{label}" %></p>
+  <% end %>
+  </div>
+<% end %>
+</div>
+
+<div class='clear_area'/>
+
+<hr>
+
+<%= link_to '戻る', root_path %>

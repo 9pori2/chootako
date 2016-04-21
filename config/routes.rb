@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post 'search'
       get  'search'
       get  'register'
+      get  'labels'
     end
     member do
       get 'show_image'
